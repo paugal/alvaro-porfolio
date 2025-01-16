@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import Image from "next/image";
+import { prefix } from "@/utils/prefix";
 
 const VARIANT_STYLES = {
   primary: "bg-bg-web text-text",
@@ -44,7 +45,7 @@ const AboutMe = ({
 
         <div className="flex justify-center md:justify-start w-64">
           <Image
-            src={imgSrc}
+            src={`${prefix}${imgSrc}`}
             width={250}
             height={250}
             priority={true}

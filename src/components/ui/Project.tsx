@@ -1,4 +1,5 @@
 import { HTMLAttributes } from "react";
+import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 
 const VARIANT_STYLES = {
@@ -22,7 +23,7 @@ const Project = ({
     <div className="flex justify-center">
       <div className={`${VARIANT_STYLES[variant]} w-64`} {...props}>
         <Image
-          src={imgSrc}
+          src={`${prefix}${imgSrc}`}
           width={350}
           height={350}
           className="rounded-md object-cover w-full h-auto"
