@@ -17,17 +17,16 @@ const PROJECTS = [
 
 const MyWork = ({ variant = "primary", ...props }: MyWorkProps) => {
   const styles = {
-    primary: "bg-bg text-text",
+    primary: "bg-bg-web text-text",
     mobile: "bg-gray-500 hover:bg-gray-600 text-white",
   };
 
   return (
     <div
-      className={`${styles[variant]}
-        flex justify-center shadow-default mb-5`}
+      className={`${styles[variant]} flex justify-center shadow-default mb-5`}
       {...props}
     >
-      <div className={`flex flex-col  p-2 max-w-4xl w-screen`}>
+      <div className={`flex flex-col  p-2 max-w-4xl w-full`}>
         <h1 className="font-bold text-2xl mb-4 mt-5">PROYECTOS</h1>
         <div className="flex flex-row gap-5 justify-between">
           {PROJECTS.map((proyecto) => (

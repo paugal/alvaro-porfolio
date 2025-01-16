@@ -8,19 +8,14 @@ interface ContactProps extends HTMLAttributes<HTMLDivElement> {
 
 const Contact = ({ variant = "primary", ...props }: ContactProps) => {
   const styles = {
-    primary: "bg-bg text-text",
+    primary: "bg-bg-web text-text",
     mobile: "bg-gray-500 hover:bg-gray-600 text-white",
   };
 
   return (
     <div className="flex justify-center">
       <div
-        className={`${styles[variant]}
-        flex flex-col
-        p-5 m-2
-        rounded-md
-        max-w-4xl
-        w-screen`}
+        className={`${styles[variant]} flex flex-col p-5 m-2 rounded-md max-w-4xl w-full`}
         {...props}
       >
         <h1 className="font-bold text-2xl mb-4">CONTACTO</h1>

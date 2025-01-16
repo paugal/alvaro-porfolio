@@ -8,18 +8,17 @@ interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 const Header = ({ variant = "primary", ...props }: HeaderProps) => {
   const styles = {
-    primary: "bg-bg text-text",
+    primary: "bg-bg-web text-text",
     mobile: "bg-gray-500 hover:bg-gray-600 text-white",
   };
 
   return (
     <div
-      className={`${styles[variant]}
-        flex justify-center shadow-default mb-5`}
+      className={`${styles[variant]} flex justify-center shadow-default mb-5`}
       {...props}
     >
       <div
-        className={`flex justify-between items-center  p-2 max-w-4xl w-screen`}
+        className={`flex justify-between items-center  p-2 max-w-4xl w-full`}
       >
         <h1 className="text-2xl">ÁLVARO ALBÁ</h1>
         <div className="flex justify-end items-center gap-5">

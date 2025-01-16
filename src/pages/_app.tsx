@@ -16,6 +16,7 @@ const futura = localFont({
       style: "normal",
     },
   ],
+  preload: true,
   variable: "--font-futura",
 });
 

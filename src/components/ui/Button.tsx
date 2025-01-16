@@ -15,8 +15,7 @@ const Button = ({ children, variant = "primary", ...props }: ButtonProps) => {
 
   return (
     <button
-      className={`flex justify-center items-center font-sans px-4 py-2
-        rounded-lg transition-colors shadow-default ${styles[variant]}`}
+      className={`flex justify-center items-center font-sans px-4 py-2 rounded-lg transition-colors shadow-default ${styles[variant]}`}
       {...props}
     >
       {children}

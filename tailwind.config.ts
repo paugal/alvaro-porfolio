@@ -19,9 +19,8 @@ export default {
         link: "#95A5F8",
       },
       boxShadow: {
-        default: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-        light:
-          "rgba(220, 220, 220, 0.05) 0px 6px 24px 0px, rgba(220, 220, 220, 0.08) 0px 0px 0px 1px;",
+        default: "0 3px 8px #00000040",
+        light: "0 6px 24px #DCDCDC0D, 0 0 0 1px #DCDCDC14",
       },
     },
   },

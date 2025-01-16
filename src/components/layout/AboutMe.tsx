@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import Image from "next/image";
 
 const VARIANT_STYLES = {
-  primary: "bg-bg text-text",
+  primary: "bg-bg-web text-text",
   mobile: "bg-gray-500 hover:bg-gray-600 text-white",
 } as const;
 
@@ -30,31 +30,25 @@ const AboutMe = ({
   return (
     <div className="flex justify-center">
       <div
-        className={`
-        ${VARIANT_STYLES[variant]}
-        flex flex-col md:flex-row
-        shadow-light p-5 m-2
-        gap-8 md:gap-16
-        rounded-md
-        max-w-4xl
-      `}
+        className={`${VARIANT_STYLES[variant]} flex flex-col md:flex-row shadow-light p-5 m-2 gap-8 md:gap-16 rounded-md max-w-4xl`}
         {...props}
       >
         <div className="flex flex-col flex-1">
           <h1 className="font-bold text-2xl mb-4">{description.title}</h1>
           {description.paragraphs.map((paragraph, index) => (
-            <p key={index} className="text-justify mb-4 last:mb-0 leading-7">
+            <p key={index} className="text-justify mb-4 last:mb-0 w-full">
               {paragraph}
             </p>
           ))}
         </div>
 
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-start w-64">
           <Image
             src={imgSrc}
             width={250}
             height={250}
-            className="rounded-md object-cover"
+            priority={true}
+            className="rounded-md object-cover w-full h-full"
             alt="Picture of the author"
           />
         </div>
