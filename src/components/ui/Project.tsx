@@ -26,7 +26,7 @@ const Project = ({
           src={`${prefix}${imgSrc}`}
           width={350}
           height={350}
-          className="rounded-md object-cover w-full h-auto"
+          className="rounded-md object-cover w-[250px] h-[250px]"
           alt={name}
         />
         <div className="flex flex-col mt-2 ml-1 justify-start">

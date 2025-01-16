@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "name": "Kitchen Study",
+            "url": "/P1.webp",
+            "description": ""
+        },
+        {
+            "name": "Tower for 100 people",
+            "url": "/P4.webp",
+            "description": ""
+        },
+        {
+            "name": "In Balance Houses In a Suburban Context",
+            "url": "/P3.webp",
+            "description": ""
+        },
+        {
+            "name": "Kitchen Study",
+            "url": "/P2.webp",
+            "description": ""
+        },
+        {
+            "name": "Tower for 100 people",
+            "url": "/P5.webp",
+            "description": ""
+        },
+        {
+            "name": "In Balance Houses In a Suburban Context",
+            "url": "/P6.webp",
+            "description": ""
+        },
+        {
+            "name": "Kitchen Study",
+            "url": "/P7.webp",
+            "description": ""
+        }
+    ]
+}
