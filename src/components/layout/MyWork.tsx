@@ -1,7 +1,7 @@
 import { HTMLAttributes, useState } from "react";
 import Project from "@/components/ui/Project";
 import Button from "@/components/ui/Button";
-import { Project as ProjectType, ProjectsData } from "@/types/projects";
+import { Project as ProjectType } from "@/types/projects";
 import projectsData from "@/assets/data/projects.json";
 
 interface MyWorkProps extends HTMLAttributes<HTMLDivElement> {
