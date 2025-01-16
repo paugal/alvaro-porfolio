@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   basePath: "/alvaro-porfolio",
+  assetPrefix: "/alvaro-porfolio/",
   output: "export",
   reactStrictMode: true,
   images: {
