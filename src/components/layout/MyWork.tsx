@@ -62,10 +62,21 @@ const MyWork = ({ variant = "primary", ...props }: MyWorkProps) => {
         </div>
         <div className="flex justify-end mt-4 mb-5 ">
           <Button onClick={() => setShowAll(!showAll)}>
-            LISTA COMPLETA{" "}
-            <span className="material-symbols-outlined">
-              keyboard_arrow_down
-            </span>
+            {!showAll ? (
+              <>
+                <span>LISTA COMPLETA</span>
+                <span className="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </>
+            ) : (
+              <>
+                <span>COMPRIMIR LISTA</span>
+                <span className="material-symbols-outlined">
+                  keyboard_arrow_up
+                </span>
+              </>
+            )}
           </Button>
         </div>
       </div>
