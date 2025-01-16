@@ -43,7 +43,7 @@ const AboutMe = ({
         <div className="flex flex-col flex-1">
           <h1 className="font-bold text-2xl mb-4">{description.title}</h1>
           {description.paragraphs.map((paragraph, index) => (
-            <p key={index} className="text-justify mb-4 last:mb-0">
+            <p key={index} className="text-justify mb-4 last:mb-0 leading-7">
               {paragraph}
             </p>
           ))}

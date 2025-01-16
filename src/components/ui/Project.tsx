@@ -18,18 +18,19 @@ const AboutMe = ({ variant = "primary", ...props }: AboutMeProps) => {
       <div
         className={`
         ${VARIANT_STYLES[variant]}
+        w-64
       `}
         {...props}
       >
         <Image
           src={props.imgSrc}
-          width={250}
-          height={250}
+          width={350}
+          height={350}
           className="rounded-md object-cover"
           alt={props.name}
         />
-        <div>
-          <span></span>
+        <div className="flex flex-col mt-2 ml-1 justify-start">
+          <span className="uppercase">{props.name}</span>
           <span className="underline">mostrar mas</span>
         </div>
       </div>
