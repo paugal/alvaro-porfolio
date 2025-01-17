@@ -46,6 +46,12 @@ const Header = ({
           >
             CONTACTO
           </button>
+          <button
+            onClick={onContactClick}
+            className="cursor-pointer bg-bg-ui text-text-inv p-1 pl-2 pr-2 rounded-lg hover:scale-110"
+          >
+            DESCARGAR CV
+          </button>
         </div>
       </div>
     </div>
