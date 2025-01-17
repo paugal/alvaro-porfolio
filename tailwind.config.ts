@@ -22,6 +22,16 @@ export default {
         default: "0 3px 8px #00000040",
         light: "0 6px 24px #DCDCDC0D, 0 0 0 1px #DCDCDC14",
       },
+      transitionProperty: {
+        DEFAULT:
+          "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+      },
+      transitionTimingFunction: {
+        DEFAULT: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      transitionDuration: {
+        DEFAULT: "300ms",
+      },
     },
   },
   plugins: [],

@@ -20,16 +20,22 @@ const Project = ({
   ...props
 }: ProjectProps) => {
   return (
-    <div className="flex justify-center">
-      <div className={`${VARIANT_STYLES[variant]} w-64`} {...props}>
-        <Image
-          src={`${prefix}${imgSrc}`}
-          width={350}
-          height={350}
-          className="rounded-md object-cover w-[250px] h-[250px]"
-          alt={name}
-        />
-        <div className="flex flex-col mt-2 ml-1 justify-start">
+    <div className={`${VARIANT_STYLES[variant]}  flex justify-center  `}>
+      <div
+        className="w-[250px] cursor-pointer hover:shadow-light rounded-md"
+        {...props}
+      >
+        <div className="overflow-hidden rounded-md w-[250px] h-[250px]">
+          <Image
+            src={`${prefix}${imgSrc}`}
+            width={350}
+            height={350}
+            className="rounded-md object-cover w-[250px] h-[250px] hover:scale-105"
+            alt={name}
+          />
+        </div>
+
+        <div className="flex flex-col mt-2 ml-5 mb-3 justify-start">
           <span className="uppercase">{name}</span>
           <span className="underline">mostrar mas</span>
         </div>

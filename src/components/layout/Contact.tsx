@@ -13,12 +13,12 @@ const Contact = ({ variant = "primary", ...props }: ContactProps) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pb-96">
       <div
-        className={`${styles[variant]} flex flex-col p-5 m-2 rounded-md max-w-4xl w-full`}
+        className={`${styles[variant]} flex flex-col p-5 m-2 justify-center rounded-md`}
         {...props}
       >
-        <h1 className="font-bold text-2xl mb-4">CONTACTO</h1>
+        <h1 className="font-bold text-xl mb-4">CONTACTO</h1>
         <div className="flex flex-row gap-20 ml-5">
           <div className="flex flex-col gap-3">
             <h3>EMAIL:</h3>
