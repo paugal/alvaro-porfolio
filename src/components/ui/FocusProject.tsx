@@ -1,6 +1,7 @@
 import { HTMLAttributes, useState } from "react";
 import { prefix } from "@/utils/prefix";
 import Image from "next/image";
+import { useFocus } from "@/contexts/FocusContext";
 
 const VARIANT_STYLES = {
   primary: "bg-bg-web text-text",
@@ -22,6 +23,7 @@ const FocusProject = ({
   ...props
 }: FocusProjectProps) => {
   const [currentImage, setCurrentImage] = useState(0);
+  const { setFocusIndex } = useFocus();
 
   const handlerChangeImage = (change: number) => {
     const lenght = images.length;
@@ -37,14 +39,23 @@ const FocusProject = ({
   };
 
   return (
-    <div className={`${VARIANT_STYLES[variant]}  flex justify-center  `}>
+    <div
+      className={`${VARIANT_STYLES[variant]}  flex justify-center absolute z-20 w-full left-0 `}
+    >
       <div
-        className="w-4xl hover:shadow-light rounded-md mb-5 mt-5 p-5"
+        className="max-w-4xl w-full hover:shadow-light rounded-md mb-5 mt-5 p-5"
         {...props}
       >
         <div className="flex flex-row m-5 justify-between">
           <span className="uppercase text-xl mb-2">{name}</span>
-          <span className="material-symbols-outlined cursor-pointer text-bg-ui scale-[2] hover:scale-[3] w-fit h-fit">
+          <span
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent event bubbling
+              console.log("Close clicked"); // Debug log
+              setFocusIndex(-1);
+            }}
+            className="material-symbols-outlined cursor-pointer text-bg-ui scale-[2] hover:scale-[3] w-fit h-fit"
+          >
             close
           </span>
         </div>
