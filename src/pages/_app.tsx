@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import "../styles/globalicons.css";
+import { FocusProvider } from "@/contexts/FocusContext";
 
 const futura = localFont({
   src: [
@@ -23,7 +24,9 @@ const futura = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${futura.variable} font-sans min-h-screen bg-bg-web`}>
-      <Component {...pageProps} />
+      <FocusProvider>
+        <Component {...pageProps} />
+      </FocusProvider>
     </main>
   );
 }

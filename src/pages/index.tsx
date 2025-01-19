@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import AboutMe from "@/components/layout/AboutMe";
 import MyWork from "@/components/layout/MyWork";
 import Contact from "@/components/layout/Contact";
-import { FocusProvider } from "@/contexts/FocusContext";
 
 const Home: NextPage = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -32,9 +31,7 @@ const Home: NextPage = () => {
         <AboutMe />
       </div>
       <div ref={workRef} className="scroll-mt-24">
-        <FocusProvider>
-          <MyWork onWorkClick={() => scrollTo(workRef)} />
-        </FocusProvider>
+        <MyWork onWorkClick={() => scrollTo(workRef)} />
       </div>
       <div ref={contactRef} className="scroll-mt-24">
         <Contact />

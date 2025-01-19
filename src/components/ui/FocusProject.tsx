@@ -1,4 +1,4 @@
-import { HTMLAttributes, useState } from "react";
+import { HTMLAttributes, useState, useEffect, useRef } from "react";
 import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 import { useFocus } from "@/contexts/FocusContext";
@@ -23,7 +23,24 @@ const FocusProject = ({
   ...props
 }: FocusProjectProps) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const { setFocusIndex } = useFocus();
+  const { focusIndex, setFocusIndex } = useFocus();
+  const FocusElementRef = useRef<HTMLDivElement>(null);
+
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>): void => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    if (focusIndex != -1) {
+      document.body.style.overflow = "hidden";
+      scrollTo(FocusElementRef);
+      return () => {
+        document.body.style.overflow = "unset";
+      };
+    }
+  }, [focusIndex]);
 
   const handlerChangeImage = (change: number) => {
     const lenght = images.length;
@@ -40,7 +57,8 @@ const FocusProject = ({
 
   return (
     <div
-      className={`${VARIANT_STYLES[variant]}  flex justify-center absolute z-20 w-full left-0 `}
+      ref={FocusElementRef}
+      className={`${VARIANT_STYLES[variant]} scroll-mt-12 flex justify-center absolute z-20 w-full h-5/6 left-0 overflow-y-scroll`}
     >
       <div
         className="max-w-4xl w-full hover:shadow-light rounded-md mb-5 mt-5 p-5"

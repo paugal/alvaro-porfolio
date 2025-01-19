@@ -6,4 +6,43 @@
     * {
         @apply transition ease-in-out duration-300;
     }
+
+    * {
+        scrollbar-width: thin;
+    }
+
+    *::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        @apply bg-bg-web;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply bg-bg-ui rounded-full hover:bg-bg-ui;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222c2a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #207261;
+    border-radius: 8px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #207261 #222c2a;
 }

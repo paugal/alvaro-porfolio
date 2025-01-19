@@ -1,4 +1,5 @@
 import { ReactNode, HTMLAttributes } from "react";
+import { useFocus } from "@/contexts/FocusContext";
 
 interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -20,6 +21,13 @@ const Header = ({
     mobile: "bg-gray-500 hover:bg-gray-600 text-white",
   } as const;
 
+  const { setFocusIndex } = useFocus();
+
+  const handleClick = (onclick: (() => void) | undefined) => {
+    if (onclick) onclick();
+    setFocusIndex(-1);
+  };
+
   return (
     <div
       className={`${styles[variant]} flex justify-center shadow-default mb-5 sticky top-0 z-50`}
@@ -29,19 +37,19 @@ const Header = ({
         <h1 className="text-2xl">ÁLVARO ABBÁ</h1>
         <div className="flex justify-end items-center gap-8">
           <button
-            onClick={onAboutClick}
+            onClick={() => handleClick(onAboutClick)}
             className="cursor-pointer hover:scale-105 "
           >
             SOBRE MI
           </button>
           <button
-            onClick={onWorkClick}
+            onClick={() => handleClick(onAboutClick)}
             className="cursor-pointer  hover:scale-110"
           >
             PROYECTOS
           </button>
           <button
-            onClick={onContactClick}
+            onClick={() => handleClick(onAboutClick)}
             className="cursor-pointer hover:scale-110"
           >
             CONTACTO
