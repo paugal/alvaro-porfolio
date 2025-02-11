@@ -1,6 +1,7 @@
 import { HTMLAttributes } from "react";
 import { prefix } from "@/utils/prefix";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const VARIANT_STYLES = {
   primary: "bg-bg-web text-text",
@@ -19,6 +20,7 @@ const Project = ({
   name,
   ...props
 }: ProjectProps) => {
+  const { t } = useTranslation();
   return (
     <div className={`${VARIANT_STYLES[variant]}  flex justify-center  `}>
       <div
@@ -37,7 +39,7 @@ const Project = ({
 
         <div className="flex flex-col mt-2 ml-5 mb-3 justify-start">
           <span className="uppercase">{name}</span>
-          <span className="underline">mostrar mas</span>
+          <span className="underline">{t("projects.showMore")}</span>
         </div>
       </div>
     </div>

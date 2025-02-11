@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import "../styles/globalicons.css";
 import { FocusProvider } from "@/contexts/FocusContext";
+import "@/config/i18n";
 
 const futura = localFont({
   src: [
@@ -21,7 +22,7 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${futura.variable} font-sans min-h-screen bg-bg-web`}>
       <FocusProvider>
@@ -30,3 +31,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </main>
   );
 }
+
+export default App;

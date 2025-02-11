@@ -4,6 +4,7 @@ import { Project as ProjectType } from "@/types/projects";
 import projectsData from "@/assets/data/projects.json";
 import WrapperProject from "../ui/WrapperProject";
 import { useFocus } from "@/contexts/FocusContext";
+import { useTranslation } from "react-i18next";
 
 interface MyWorkProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "primary" | "mobile";
@@ -47,6 +48,7 @@ const MyWork = ({
 }: MyWorkProps) => {
   const [showAll, setShowAll] = useState(false);
   const { focusIndex, setFocusIndex } = useFocus();
+  const { t } = useTranslation();
 
   const styles = {
     primary: "bg-bg-web text-text",
@@ -66,7 +68,7 @@ const MyWork = ({
       {...props}
     >
       <div className={`flex flex-col p-2 max-w-4xl w-full`}>
-        <h1 className="font-bold text-xl mb-4 mt-5">PROYECTOS</h1>
+        <h1 className="font-bold text-xl mb-4 mt-5">{t("projects.title")}</h1>
         <div className="flex flex-wrap flex-row gap-5 justify-between">
           {projectsData.projects.map((project: ProjectType, index: number) =>
             handlerShowWork({
@@ -82,14 +84,14 @@ const MyWork = ({
           <Button onClick={handleClick}>
             {!showAll ? (
               <>
-                <span>LISTA COMPLETA</span>
+                <span>{t("projects.fullList")}</span>
                 <span className="material-symbols-outlined">
                   keyboard_arrow_down
                 </span>
               </>
             ) : (
               <>
-                <span>COMPRIMIR LISTA</span>
+                <span>{t("projects.compressList")}</span>
                 <span className="material-symbols-outlined">
                   keyboard_arrow_up
                 </span>

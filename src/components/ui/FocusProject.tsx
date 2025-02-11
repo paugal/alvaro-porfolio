@@ -58,10 +58,10 @@ const FocusProject = ({
   return (
     <div
       ref={FocusElementRef}
-      className={`${VARIANT_STYLES[variant]} scroll-mt-12 flex justify-center absolute z-20 w-full h-5/6 left-0 overflow-y-scroll`}
+      className={`${VARIANT_STYLES[variant]} scroll-mt-12 flex justify-center absolute z-20 w-full h-fit left-0 `}
     >
       <div
-        className="max-w-4xl w-full hover:shadow-light rounded-md mb-5 mt-5 p-5"
+        className="max-w-4xl w-full h-full max-h-[90vh] z-10 bg-bg-web hover:shadow-light rounded-md my-5 p-5 overflow-y-auto"
         {...props}
       >
         <div className="flex flex-row m-5 justify-between">

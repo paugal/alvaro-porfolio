@@ -1,5 +1,9 @@
 import { ReactNode, HTMLAttributes } from "react";
 import { useFocus } from "@/contexts/FocusContext";
+import Image from "next/image";
+import downloadIcon from "../../assets/icons/download.svg";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -16,6 +20,7 @@ const Header = ({
   onContactClick,
   ...props
 }: HeaderProps) => {
+  const { t } = useTranslation();
   const styles = {
     primary: "bg-bg-web text-text",
     mobile: "bg-gray-500 hover:bg-gray-600 text-white",
@@ -34,31 +39,33 @@ const Header = ({
       {...props}
     >
       <div className="flex justify-between items-center p-2 max-w-4xl w-full">
-        <h1 className="text-2xl">ÁLVARO ABBÁ</h1>
-        <div className="flex justify-end items-center gap-8">
+        <h1 className="text-3xl">ÁLVARO ABBÁ</h1>
+        <div className="flex justify-end items-center gap-8 text-base">
           <button
             onClick={() => handleClick(onAboutClick)}
-            className="cursor-pointer hover:scale-105 "
+            className="cursor-pointer hover:scale-105"
           >
-            SOBRE MI
+            {t("header.aboutMe")}
           </button>
           <button
-            onClick={() => handleClick(onAboutClick)}
-            className="cursor-pointer  hover:scale-110"
-          >
-            PROYECTOS
-          </button>
-          <button
-            onClick={() => handleClick(onAboutClick)}
+            onClick={() => handleClick(onWorkClick)}
             className="cursor-pointer hover:scale-110"
           >
-            CONTACTO
+            {t("header.projects")}
           </button>
           <button
-            onClick={onContactClick}
-            className="cursor-pointer bg-bg-ui text-text-inv p-1 pl-2 pr-2 rounded-lg hover:scale-110"
+            onClick={() => handleClick(onContactClick)}
+            className="cursor-pointer hover:scale-110"
           >
-            DESCARGAR CV
+            {t("header.contact")}
+          </button>
+          <LanguageSwitcher />
+          <button
+            onClick={onContactClick}
+            className="cursor-pointer flex flex-row gap-1 bg-bg-ui text-text-inv p-1 pl-2 pr-2 rounded-lg hover:scale-110"
+          >
+            <span className="material-symbols-outlined">download</span>
+            {t("header.porfolio")}
           </button>
         </div>
       </div>

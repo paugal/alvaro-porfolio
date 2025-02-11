@@ -1,0 +1,22 @@
+{
+    "header": {
+        "aboutMe": "SOBRE MI",
+        "projects": "PROYECTOS",
+        "contact": "CONTACTO",
+        "porfolio": "PORFOLIO"
+    },
+    "aboutMe": {
+        "title": "SOBRE MI",
+        "desc": "This is a demo of Next.js i18n"
+    },
+    "projects": {
+        "title": "PROYECTOS",
+        "showMore": "mostrar mas",
+        "fullList": "LISTA COMPLETA"
+    },
+    "contact": {
+        "title": "CONTACTO",
+        "porfolio": "PORFOLIO",
+        "link": "link de descarga"
+    }
+}

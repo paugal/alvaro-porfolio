@@ -1,0 +1,24 @@
+{
+    "header": {
+        "aboutMe": "ABOUT ME",
+        "projects": "PROJECTS",
+        "contact": "CONTACT",
+        "porfolio": "PORTFOLIO"
+    },
+    "aboutMe": {
+        "title": "ABOUT ME",
+        "p1": "Hi! I'm Alvaro Abba, a final year Architecture student. Throughout my training, I have developed a deep interest in sustainable design, the integration of architecture in the environment and the creation of spaces that connect with people.",
+        "p2": "My experience includes academic projects and collaborations ranging from conceptualization to technical development, always with a focus on detail and functionality. I am passionate about the idea that architecture can transform lives and contribute to a more balanced and harmonious future."
+    },
+    "projects": {
+        "title": "PROJECTS",
+        "showMore": "show more",
+        "fullList": "FULL LIST",
+        "compressList": "COMPRESS LIST"
+    },
+    "contact": {
+        "title": "CONTACT",
+        "porfolio": "PORTFOLIO",
+        "link": "download link"
+    }
+}
