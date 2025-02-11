@@ -1,7 +1,5 @@
 import { ReactNode, HTMLAttributes } from "react";
 import { useFocus } from "@/contexts/FocusContext";
-import Image from "next/image";
-import downloadIcon from "../../assets/icons/download.svg";
 import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
@@ -33,6 +31,31 @@ const Header = ({
     setFocusIndex(-1);
   };
 
+  const onButtonClick = () => {
+    const pdfUrl = new URL(
+      "../../assets/porfolio/PORTFOLIO.pdf",
+      import.meta.url
+    ).href;
+    const downloadFile = async () => {
+      try {
+        const response = await fetch(pdfUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "Portfolio_ALVARO_ABBA.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error("Error downloading file:", error);
+      }
+    };
+
+    downloadFile();
+  };
+
   return (
     <div
       className={`${styles[variant]} flex justify-center shadow-default mb-5 sticky top-0 z-50`}
@@ -61,8 +84,8 @@ const Header = ({
           </button>
           <LanguageSwitcher />
           <button
-            onClick={onContactClick}
             className="cursor-pointer flex flex-row gap-1 bg-bg-ui text-text-inv p-1 pl-2 pr-2 rounded-lg hover:scale-110"
+            onClick={onButtonClick}
           >
             <span className="material-symbols-outlined">download</span>
             {t("header.porfolio")}

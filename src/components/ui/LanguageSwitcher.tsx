@@ -13,22 +13,15 @@ export function LanguageSwitcher() {
     { label: "French", code: "fr" },
   ];
 
-  // Function to toggle the language dropdown
-  const toggleDropdown = () => {
-    setShowDropdown((prev) => !prev);
-  };
-
-  // Change language when clicking a language option
   const onChangeLang = (lang_code: string) => {
-    i18n.changeLanguage(lang_code); // Change the language
-    setShowDropdown(false); // Close the dropdown after selection
+    i18n.changeLanguage(lang_code);
+    setShowDropdown(false);
   };
 
   return (
     <div className="language-container">
       <span
         className="material-symbols-outlined"
-        onClick={toggleDropdown}
         onMouseEnter={() => setShowDropdown(true)}
         style={{ cursor: "pointer" }}
       >
