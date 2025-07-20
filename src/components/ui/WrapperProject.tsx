@@ -6,7 +6,7 @@ interface WrapperProjectProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   description: string;
   images: Array<string>;
-  imgSrc: string;
+  mainPhoto: string;
   focus: boolean;
 }
 
@@ -14,7 +14,7 @@ const WrapperProject = ({
   name,
   description,
   images,
-  imgSrc,
+  mainPhoto,
   focus,
   ...props
 }: WrapperProjectProps) => {
@@ -23,7 +23,7 @@ const WrapperProject = ({
       {focus ? (
         <FocusProject name={name} description={description} images={images} />
       ) : (
-        <Project name={name} imgSrc={imgSrc} />
+        <Project name={name} mainPhoto={mainPhoto} />
       )}
     </div>
   );

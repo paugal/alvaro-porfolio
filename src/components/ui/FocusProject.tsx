@@ -1,5 +1,5 @@
 import { HTMLAttributes, useState, useEffect, useRef } from "react";
-import { prefix } from "@/utils/prefix";
+//import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 import { useFocus } from "@/contexts/FocusContext";
 
@@ -13,6 +13,7 @@ interface FocusProjectProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   description: string;
   images: Array<string>;
+  folder: string;
 }
 
 const FocusProject = ({
@@ -86,7 +87,8 @@ const FocusProject = ({
           </span>
           <div className="w-[650px] flex justify-center">
             <Image
-              src={`${prefix}${images[currentImage]}`}
+              //src={`${prefix}${images[currentImage]}`}
+              src={`${images[currentImage]}`}
               width={600}
               height={600}
               className="w-auto h-auto rounded-md object-contain max-h-[450px] max-w-[650px]"

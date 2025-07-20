@@ -23,6 +23,7 @@ export default {
         default: "0 3px 8px #00000040",
         //light: "0 6px 24px #DCDCDC0D, 0 0 0 1px #DCDCDC14",
         light: "0 6px 24px #2cc9aa17, 0 0 0 1px #2cc9aa14",
+        footer: "-11px 153px 70px 45px rgba(0,0,0,0.78);",
       },
       transitionProperty: {
         DEFAULT:

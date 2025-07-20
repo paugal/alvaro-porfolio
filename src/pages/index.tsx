@@ -6,7 +6,36 @@ import AboutMe from "@/components/layout/AboutMe";
 import MyWork from "@/components/layout/MyWork";
 import Footer from "@/components/layout/Footer";
 
-const Home: NextPage = () => {
+import { GetStaticProps } from "next";
+import { getImagesFromProjectFolder } from "../utils/getProjectImages";
+import projectsData from "../assets/data/projects.json";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const enrichedProjects = projectsData.projects.map((project) => ({
+    ...project,
+    images: getImagesFromProjectFolder(project.folder),
+  }));
+
+  return {
+    props: {
+      projects: enrichedProjects,
+    },
+  };
+};
+
+type Project = {
+  name: string;
+  folder: string;
+  url: string;
+  description: string;
+  images: string[];
+};
+
+interface HomeProps {
+  projects: Project[];
+}
+
+const Home: NextPage<HomeProps> = ({ projects }) => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -31,7 +60,7 @@ const Home: NextPage = () => {
         <AboutMe />
       </div>
       <div ref={workRef} className="scroll-mt-24">
-        <MyWork onWorkClick={() => scrollTo(workRef)} />
+        <MyWork projects={projects} onWorkClick={() => scrollTo(workRef)} />
       </div>
       <div ref={contactRef} className="scroll-mt-24">
         <Footer />

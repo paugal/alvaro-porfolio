@@ -44,7 +44,7 @@ const AboutMe = ({
 
         <div className="flex justify-center w-64">
           <Image
-            src={`${prefix}${imgSrc}`}
+            src={`${prefix}img${imgSrc}`}
             width={250}
             height={250}
             priority={true}

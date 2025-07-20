@@ -34,9 +34,10 @@ const footerElements: FooterElement[] = [
     fileUrl: "/assets/porfolio/PORTFOLIO.pdf",
   },
 ];
+
 const Footer = () => {
   return (
-    <footer className="bg-footer text-text p-4 text-center">
+    <footer className="bg-footer text-text p-4 text-center shadow-footer">
       <div className="flex flex-row items-center gap-20 m-10 mb-20 justify-center">
         {footerElements.map((el: FooterElement, index: number) => (
           <div key={index}>
@@ -58,9 +59,7 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <p className="txet-sm">
-        © {new Date().getFullYear()} Alvaro Portfolio. All rights reserved.
-      </p>
+      <p className="txet-sm">© {new Date().getFullYear()} Álvaro Abbá.</p>
     </footer>
   );
 };

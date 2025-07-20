@@ -10,13 +10,13 @@ const VARIANT_STYLES = {
 
 interface ProjectProps extends HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof VARIANT_STYLES;
-  imgSrc: string;
+  mainPhoto: string;
   name: string;
 }
 
 const Project = ({
   variant = "primary",
-  imgSrc,
+  mainPhoto,
   name,
   ...props
 }: ProjectProps) => {
@@ -29,7 +29,7 @@ const Project = ({
       >
         <div className="overflow-hidden rounded-md w-[250px] h-[250px]">
           <Image
-            src={`${prefix}${imgSrc}`}
+            src={encodeURI(`${prefix}${mainPhoto}`)}
             width={350}
             height={350}
             className="rounded-md object-cover w-[250px] h-[250px] hover:scale-105"

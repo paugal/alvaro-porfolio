@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "i18next": "^24.2.2",
     "next": "^15.4.1",
     "react": "^19.0.0",
