@@ -2,6 +2,7 @@ import { ReactNode, HTMLAttributes } from "react";
 import { useFocus } from "@/contexts/FocusContext";
 import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { downloadFileFromPublic } from "@/utils/downloadFile";
 
 interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -10,6 +11,13 @@ interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
   onWorkClick?: () => void;
   onContactClick?: () => void;
 }
+
+const onButtonClick = () => {
+  downloadFileFromPublic(
+    "/assets/porfolio/PORTFOLIO.pdf",
+    "Portfolio_ALVARO_ABBA.pdf"
+  );
+};
 
 const Header = ({
   variant = "primary",
@@ -29,31 +37,6 @@ const Header = ({
   const handleClick = (onclick: (() => void) | undefined) => {
     if (onclick) onclick();
     setFocusIndex(-1);
-  };
-
-  const onButtonClick = () => {
-    const pdfUrl = new URL(
-      "../../assets/porfolio/PORTFOLIO.pdf",
-      import.meta.url
-    ).href;
-    const downloadFile = async () => {
-      try {
-        const response = await fetch(pdfUrl);
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "Portfolio_ALVARO_ABBA.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-      } catch (error) {
-        console.error("Error downloading file:", error);
-      }
-    };
-
-    downloadFile();
   };
 
   return (

@@ -64,7 +64,7 @@ const MyWork = ({
 
   return (
     <div
-      className={`${styles[variant]} flex justify-center mt-10 shadow-default mb-5`}
+      className={`${styles[variant]} flex justify-center mt-10  mb-5`}
       {...props}
     >
       <div className={`flex flex-col p-2 max-w-4xl w-full`}>

@@ -12,7 +12,8 @@
     "projects": {
         "title": "PROYECTOS",
         "showMore": "mostrar mas",
-        "fullList": "LISTA COMPLETA"
+        "fullList": "LISTA COMPLETA",
+        "compressList": "COMPRESS LIST"
     },
     "contact": {
         "title": "CONTACTO",

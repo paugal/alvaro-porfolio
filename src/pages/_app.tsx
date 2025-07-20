@@ -8,6 +8,11 @@ import "@/config/i18n";
 const futura = localFont({
   src: [
     {
+      path: "../assets/fonts/Futura Std Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
       path: "../assets/fonts/Futura Std Medium.ttf",
       weight: "500",
       style: "normal",

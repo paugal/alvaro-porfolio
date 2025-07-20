@@ -17,6 +17,7 @@ export default {
         text: "#ffffffff",
         "text-inv": "#2f2f2fff",
         link: "#95A5F8",
+        footer: "#101212",
       },
       boxShadow: {
         default: "0 3px 8px #00000040",
