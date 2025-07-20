@@ -13,7 +13,6 @@ interface FocusProjectProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   description: string;
   images: Array<string>;
-  folder: string;
 }
 
 const FocusProject = ({
