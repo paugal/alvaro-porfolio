@@ -3,6 +3,7 @@ export interface Project {
   url: string;
   description: string;
   folder: string;
+  images: string[];
 }
 
 export interface ProjectsData {

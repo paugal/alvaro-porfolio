@@ -1,10 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ProjectsData } from "@/types/projects";
-import projectsData from "@/assets/data/projects.json";
+import rawProjects from "@/assets/data/projects.json";
+import { getImagesFromProjectFolder } from "@/utils/getProjectImages";
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProjectsData>
 ) {
-  res.status(200).json(projectsData);
+  const enrichedProjects = rawProjects.projects.map((project) => ({
+    ...project,
+    images: getImagesFromProjectFolder(project.folder),
+  }));
+
+  res.status(200).json({ projects: enrichedProjects });
 }
