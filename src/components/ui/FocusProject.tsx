@@ -2,6 +2,7 @@ import { HTMLAttributes, useState, useEffect, useRef } from "react";
 //import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 import { useFocus } from "@/contexts/FocusContext";
+import OpenImageControls from "./OpenImageControls";
 
 const VARIANT_STYLES = {
   primary: "bg-bg-web text-text",
@@ -25,6 +26,7 @@ const FocusProject = ({
   const [currentImage, setCurrentImage] = useState(0);
   const { focusIndex, setFocusIndex } = useFocus();
   const FocusElementRef = useRef<HTMLDivElement>(null);
+  const [openImage, setOpenImage] = useState(false);
 
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>): void => {
     if (ref.current) {
@@ -58,14 +60,14 @@ const FocusProject = ({
   return (
     <div
       ref={FocusElementRef}
-      className={`${VARIANT_STYLES[variant]} scroll-mt-12 flex justify-center absolute z-20 w-full h-fit left-0 `}
+      className={`${VARIANT_STYLES[variant]} fixed inset-0 z-50 flex justify-center items-center`}
     >
       <div
-        className="max-w-4xl w-full h-full max-h-[90vh] z-10 bg-bg-web hover:shadow-light rounded-md my-5 p-5 overflow-y-auto"
+        className="w-full max-w-5xl h-full bg-bg-web rounded-md p-5 overflow-y-auto m-5 flex flex-col gap-10"
         {...props}
       >
         <div className="flex flex-row m-5 justify-between">
-          <span className="uppercase text-xl mb-2">{name}</span>
+          <span className="uppercase text-3xl mb-2">{name}</span>
           <span
             onClick={(e) => {
               e.stopPropagation(); // Prevent event bubbling
@@ -84,15 +86,36 @@ const FocusProject = ({
           >
             keyboard_arrow_left
           </span>
-          <div className="w-[650px] flex justify-center">
-            <Image
-              //src={`${prefix}${images[currentImage]}`}
-              src={`${images[currentImage]}`}
-              width={600}
-              height={600}
-              className="w-auto h-auto rounded-md object-contain max-h-[450px] max-w-[650px]"
-              alt={name}
-            />
+          <div className="w-[650px] flex justify-center ">
+            {openImage ? (
+              <>
+                <OpenImageControls
+                  handlerChangeImage={handlerChangeImage}
+                  setOpenImage={setOpenImage}
+                />
+                <Image
+                  //src={`${prefix}${images[currentImage]}`}
+                  src={`${images[currentImage]}`}
+                  width={600}
+                  height={600}
+                  className="fixed top-0 w-full h-full rounded-md object-contain cursor-pointer z-40 bg-bg-web"
+                  alt={name}
+                  onClick={() => setOpenImage(false)}
+                />
+              </>
+            ) : (
+              <>
+                <Image
+                  //src={`${prefix}${images[currentImage]}`}
+                  src={`${images[currentImage]}`}
+                  width={600}
+                  height={600}
+                  className="w-auto h-auto rounded-md object-contain max-h-[450px] max-w-[650px] cursor-pointer hover:scale-105"
+                  alt={name}
+                  onClick={() => setOpenImage(true)}
+                />
+              </>
+            )}
           </div>
 
           <span

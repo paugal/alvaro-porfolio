@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className="language-container">
+    <div className="language-container flex items-center flex-col ">
       <span
         className="material-symbols-outlined"
         onMouseEnter={() => setShowDropdown(true)}
@@ -29,7 +29,7 @@ export function LanguageSwitcher() {
       </span>
       {showDropdown && (
         <div
-          className="absolute bg-bg-web m-1 px-2 rounded-lg"
+          className="absolute bg-bg-web m-1 mt-6 px-2 rounded-lg"
           onMouseLeave={() => setShowDropdown(false)}
         >
           {LANGUAGES.map(({ code, label }) => (
