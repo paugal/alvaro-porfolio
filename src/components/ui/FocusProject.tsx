@@ -1,5 +1,5 @@
 import { HTMLAttributes, useState, useEffect, useRef } from "react";
-//import { prefix } from "@/utils/prefix";
+import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 import { useFocus } from "@/contexts/FocusContext";
 import OpenImageControls from "./OpenImageControls";
@@ -95,8 +95,7 @@ const FocusProject = ({
                   setOpenImage={setOpenImage}
                 />
                 <Image
-                  //src={`${prefix}${images[currentImage]}`}
-                  src={`${images[currentImage].replace(/ /g, "%20")}`}
+                  src={`${prefix}${images[currentImage]}`}
                   width={600}
                   height={600}
                   className="fixed top-0 w-full h-full rounded-md object-contain cursor-pointer z-40 bg-bg-web"
@@ -107,8 +106,7 @@ const FocusProject = ({
             ) : (
               <>
                 <Image
-                  //src={`${prefix}${images[currentImage]}`}
-                  src={`${images[currentImage]}`}
+                  src={`${prefix}${images[currentImage]}`}
                   width={600}
                   height={600}
                   className="w-auto h-auto rounded-md object-contain max-h-[450px] max-w-[650px] cursor-pointer hover:scale-105"
