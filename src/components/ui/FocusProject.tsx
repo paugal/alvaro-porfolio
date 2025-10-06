@@ -35,6 +35,7 @@ const FocusProject = ({
   };
 
   useEffect(() => {
+    console.log("URLL: " + images[currentImage]);
     if (focusIndex != -1) {
       document.body.style.overflow = "hidden";
       scrollTo(FocusElementRef);
@@ -95,7 +96,7 @@ const FocusProject = ({
                 />
                 <Image
                   //src={`${prefix}${images[currentImage]}`}
-                  src={`${images[currentImage]}`}
+                  src={`${images[currentImage].replace(/ /g, "%20")}`}
                   width={600}
                   height={600}
                   className="fixed top-0 w-full h-full rounded-md object-contain cursor-pointer z-40 bg-bg-web"
