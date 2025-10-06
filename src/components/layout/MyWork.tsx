@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 interface MyWorkProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "primary" | "mobile";
   onWorkClick?: () => void;
-  projects: ProjectType[]; // ✅ Se añadió esto
+  projects: ProjectType[];
 }
 
 interface handlerProps {

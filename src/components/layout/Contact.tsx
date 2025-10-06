@@ -31,7 +31,9 @@ const Contact = ({ variant = "primary", ...props }: ContactProps) => {
           </div>
           <div className="flex flex-col gap-3">
             <span>alvaro.abba@gmail.com</span>
-            <span>www.linkedln.com/alvaroabba</span>
+            <a href="www.linkedln.com/alvaroabba">
+              www.linkedln.com/alvaroabba
+            </a>
             <a className="text-link underline cursor-pointer" href="">
               {t("contact.link")}
             </a>
