@@ -19,7 +19,7 @@ interface AboutMeProps extends HTMLAttributes<HTMLDivElement> {
 
 const AboutMe = ({
   variant = "primary",
-  imgSrc = "/alvaro-perfil.webp",
+  imgSrc = "/img/alvaro-perfil.webp",
   ...props
 }: AboutMeProps) => {
   const { t } = useTranslation();
